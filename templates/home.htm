@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{url_for('static',filename='style.css')}}" rel="stylesheet">
+    <script src="{{url_for('static',filename='weather.js')}}"></script>
+
+</head>
+
+<body>
+    {% if image!='none' %}
+    <img class='bg-img' src="{{image}}" alt=""> {% endif %}
+
+    <div class='content '>
+        <h2>City weather</h2>
+
+        <form onsubmit="load()" id='form'>
+            <input type='text ' name='city' id='cities'>
+            <button class='button ' type="submit">go</button>
+        </form>
+
+        <div id='info'>
+            <h2 class='city-name'></h2>
+            <img src=# class='init-icon'>
+            <h2></h2>
+            <h2></h2>
+        </div>
+
+</body>
+
+</html>

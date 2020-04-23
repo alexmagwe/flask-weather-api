@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to right, skyblue, rgba(62, 190, 192, 0.85), rgb(40, 121, 179));
+    height: 100vh;
+    /* overflow: hidden; */
+}
+
+.content {
+    width: 100%;
+    padding-top: 6%;
+    background: transparent;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    font-weight: 800;
+    backdrop-filter: blur(10px);
+    margin: 0.5em 0;
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+}
+
+.bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#cities {
+    font-family: inherit;
+    font-size: 2em;
+    padding: 10px;
+    width: 30%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.button {
+    width: 10em;
+    display: block;
+    height: 35px;
+    margin: 1em auto;
+    border-radius: 10px;
+    border: 3px solid silver;
+    background-color: aliceblue;
+    color: #111;
+    transition: 0.5s ease-in-out;
+}
+
+.init-icon {
+    visibility: hidden;
+}
+
+.button:hover {
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+#info {
+    /* height: 100px; */
+    /* width: 20em; */
+}
+
+.icon {
+    width: 6em;
+    height: 6em;
+    text-align: center;
+}
