@@ -1,16 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    var xhttp = new XMLHttpRequest();
-    var weather = document.getElementById('info');
-    var city_name = document.getElementsByClassName("city-name")[0];
-    var form = document.querySelector("#form");
+    let xhttp = new XMLHttpRequest();
+    const weather = document.getElementById('info');
+    const city_name = document.getElementsByClassName("city-name")[0];
+    const form = document.querySelector("#form");
 
 
 
     form.onsubmit = () => {
-        var icon = weather.children[1];
-        console.log(icon)
-        var city = document.getElementById('cities').value;
+        weather.style.visibility = 'hidden';
+        const icon = weather.children[1];
+        console.log('im here', weather.style.visibility);
+        const city = document.getElementById('cities').value;
+        weather.style.opacity = '0';
         xhttp.onload = () => {
+            weather.style.visibility = 'visible';
             const resp = JSON.parse(xhttp.responseText);
             if (resp != '1') {
                 form.reset();
@@ -19,15 +22,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 let temp = weather.children[2];
                 pic.className = 'icon';
                 pic.src = `/static/images/${resp.icon}.svg`;
-                console.log(resp.icon)
                 weather.replaceChild(pic, icon);
                 city_name.innerHTML = resp.city;
                 temp.innerHTML = `Temperature is ${resp.temp} deg`;
                 desc.innerHTML = resp.description;
+                weather.style.opacity = '1';
+
 
             } else {
-                weather.childNodes[0].innerHTML = 'Cant access that city\'s weather';
+                city_name.innerHTML = 'Cant access that city\'s weather';
+                weather.style.opacity = '1';
+                console.log(weather.style.opacity)
+
+
             }
+
         }
 
 

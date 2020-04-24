@@ -28,10 +28,12 @@ def get_weather():
             data.append(resp)
         if len(data)!=1:
             return '1'
-        weather={**data[0].get('weather')[0],**data[0].get('main')}
-        print(weather)
-        if not weather:
+        check=data[0].get('weather')
+        if not check:
             return '1'
+        weather={**data[0].get('weather')[0],**data[0].get('main')}
+        if not weather:
+            return jsonify('1')
         weather['city']=city
     return jsonify(weather)
     

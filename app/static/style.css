@@ -84,16 +84,24 @@ h2 {
     visibility: hidden;
 }
 
+.animate {
+    animation: slidein 0.5s ease-in forwards;
+    animation-play-state: paused;
+}
+
 .button:hover {
     background: transparent;
     color: white;
     cursor: pointer;
 }
 
+.fadein {
+    opacity: 1;
+}
+
 #info {
-    /* height: 100px; */
-    transition: 0.3s ease-in;
-    /* width: 20em; */
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
 }
 
 .icon {
@@ -145,5 +153,14 @@ h2 {
     }
     100% {
         background-position: 0 0;
+    }
+}
+
+@keyframes slidein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
