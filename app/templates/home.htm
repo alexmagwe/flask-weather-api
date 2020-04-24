@@ -11,24 +11,22 @@
 </head>
 
 <body>
-    {% if image!='none' %}
-    <img class='bg-img' src="{{image}}" alt=""> {% endif %}
+    <div class="container">
+        <div class='content '>
+            <h1>City weather</h1>
+            <h3>Enter a city name</h3>
+            <form onsubmit="load()" id='form'>
+                <input type='text ' name='city' id='cities'>
+                <button class='button ' type="submit">go</button>
+            </form>
 
-    <div class='content '>
-        <h2>City weather</h2>
-
-        <form onsubmit="load()" id='form'>
-            <input type='text ' name='city' id='cities'>
-            <button class='button ' type="submit">go</button>
-        </form>
-
-        <div id='info'>
-            <h2 class='city-name'></h2>
-            <img src=# class='init-icon'>
-            <h2></h2>
-            <h2></h2>
+            <div id='info'>
+                <h2 class='city-name'></h2>
+                <img src=# class='init-icon'>
+                <h2></h2>
+                <h2></h2>
+            </div>
         </div>
-
 </body>
 
 </html>

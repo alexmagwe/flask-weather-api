@@ -12,7 +12,7 @@ def query_api(city):
         data=None 
     return data
          
- 
+  
 @app.route("/")   
 def home():       
     return render_template('home.htm')
