@@ -97,6 +97,8 @@ h2 {
 
 .fadein {
     opacity: 1;
+}.hide{
+opacity=0;
 }
 
 #info {
@@ -123,14 +125,14 @@ h2 {
 
 .container {
     align-items: center;
-    background-image: linear-gradient(to right, #054f7d, #00a7cf, #efe348, #0c0609, #054f7d);
-    background-size: 600%;
+    background-image: linear-gradient(to right, #6d95ad, #29c8f0, #ad2e2e, rgb(66, 184, 134), #cc721ef8, #054f7d);
+    background-size: 800%;
     background-position: 0 0;
     font-family: 'Lato', Arial, sans-serif;
     height: 100%;
     justify-content: center;
     /* Animation */
-    animation-duration: 20s;
+    animation-duration: 30s;
     animation-iteration-count: infinite;
     animation-name: gradients;
 }
@@ -143,16 +145,22 @@ h2 {
         background-position: 50% 0;
     }
     50% {
-        background-position: 90% 0;
+        background-position: 80% 0;
     }
     60% {
         background-position: 60%;
     }
-    75% {
+    70% {
         background-position: 40%;
     }
+    80% {
+        background-position: 70%;
+    }
+    90% {
+        background-position: 90%;
+    }
     100% {
-        background-position: 0 0;
+        background-position: 0% 0;
     }
 }
 

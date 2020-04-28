@@ -1,5 +1,6 @@
 from flask import Flask,redirect,url_for,render_template,request,jsonify
 import os
+from pprint import pprint as pp
 from time import time 
 import requests 
 app=Flask(__name__)
@@ -25,7 +26,9 @@ def get_weather():
     if city:
         resp=query_api(city) 
         if resp:
+            pp(resp)
             data.append(resp)
+            
         if len(data)!=1:
             return '1'
         check=data[0].get('weather')
