@@ -32,6 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 city_name.innerHTML = 'Cant access that city\'s weather';
                 weather.style.opacity = '1';
+            desc.innerHTML ='';
+            temp.innerHTML='';
+             weather.children[1].src='#';
+             weather.children[1].style.display='none';
 
 
             }
@@ -56,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             temp.innerHTML='';
              weather.children[1].src='#';
              weather.children[1].style.display='none';
+		
             weather.style.opacity = '1';
            
         

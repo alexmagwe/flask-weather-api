@@ -97,8 +97,10 @@ h2 {
 
 .fadein {
     opacity: 1;
-}.hide{
-opacity=0;
+}
+
+.hide {
+    opacity=0;
 }
 
 #info {
