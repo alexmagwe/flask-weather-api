@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{url_for('static',filename='style.css')}}" rel="stylesheet">
-    <script src="{{url_for('static',filename='weather.js')}}"></script>
+    <script src="{{url_for('static',filename='weather1.js')}}"></script>
 
 </head>
 
@@ -16,8 +17,8 @@
             <h1>City weather</h1>
             <h3>Enter a city name</h3>
             <form onsubmit="load()" id='form'>
-                <input type='text ' name='city' id='cities'>
-                <button class='button ' type="submit">go</button>
+		    <input type='text ' name='city' id='cities'required pattern="[A-za-z].{3,}"title='enter a valid city name' >
+              <button class='button ' type="submit">go</button>
             </form>
 
             <div id='info'>

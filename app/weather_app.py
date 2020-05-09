@@ -19,10 +19,10 @@ def home():
     return render_template('home.htm')
               
           
-@app.route("/weather",methods=['POST'])                
+@app.route("/weather",methods=['GET'])                
 def get_weather(): 
     data=[]
-    city=request.form.get('city')
+    city=request.args.get('city')
     if city:
         resp=query_api(city) 
         if resp:
