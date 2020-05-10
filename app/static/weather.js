@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-   form.onsubmit((e) => {
+   form.onsubmit=function(e) {
 	 e.preventDefault();
         weather.style.visibility = 'hidden';
         const icon = weather.children[1];
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	let info=$(city).serialize()
 	
         $.get('/weather',info,(data)=>callback(data));
-   )
+   
        const callback = (data) => {
 	       console.log(data);
             weather.style.visibility = 'visible';
