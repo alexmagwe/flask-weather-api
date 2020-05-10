@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
    $('form').submit(function(e) {
-	   console.log('form handled by func')
 	 e.preventDefault();
         weather.style.visibility = 'hidden';
         const icon = weather.children[1];
