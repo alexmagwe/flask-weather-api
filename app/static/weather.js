@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const weather = document.getElementById('info');
     const city_name = document.getElementsByClassName("city-name")[0];
-    const form = document.querySelector("#form");
 
 
 
-   form.onsubmit=function(e) {
+   $('form').submit(function(e) {
+	   console.log('form handled by func')
 	 e.preventDefault();
         weather.style.visibility = 'hidden';
         const icon = weather.children[1];
@@ -14,14 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const desc = weather.children[3];
         const temp = weather.children[2];
 	let info=$(city).serialize()
-	
         $.get('/weather',info,(data)=>callback(data));
-   
        const callback = (data) => {
-	       console.log(data);
             weather.style.visibility = 'visible';
 	     const resp=data;
-            if (resp != '1') {
+           if (resp['description']) {
                 form.reset();
                 let pic = document.createElement('img');
                 pic.className = 'icon';
@@ -33,12 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 weather.style.opacity = '1';
 
             } else {
-                city_name.innerHTML = 'Cant access that city\'s weather';
+                city_name.innerHTML = resp['message'];
                 weather.style.opacity = '1';
             desc.innerHTML ='';
             temp.innerHTML='';
              weather.children[1].src='#';
              weather.children[1].style.display='none';
             }
-        } }            
+         } })           
 })

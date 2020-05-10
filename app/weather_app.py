@@ -33,7 +33,7 @@ def get_weather():
             return '1'
         check=data[0].get('weather')
         if not check:
-            return '1'
+            return jsonify(data[0])
         weather={**data[0].get('weather')[0],**data[0].get('main')}
         if not weather:
             return jsonify('1')
